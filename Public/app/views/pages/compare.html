@@ -1,0 +1,152 @@
+
+<section style="margin-top: 10%">
+	<center><h1>Comparison Result</h1></center>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-1 col-lg-1">
+         
+      </div>
+      <!-- ======================
+            First college       
+      ======================= -->
+      <div class="col-sm-5 col-lg-5" style="padding-right: 0%;">
+        <br>
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover tablestyle">
+            <thead class="tablehead">
+              <center>
+                <tr>
+                  <th>{{college1.College_Name}}</th>
+                </tr>
+              </center>
+            </thead>
+             <tbody>
+                <tr>
+                  <td>{{college1.Locality}}, {{college1.Street}}, {{college1.Dist}},{{college1.Pincode}}</td>
+                </tr>
+                <tr class="rowstyle">
+                  <td><p class="fa fa-font"> {{college1.College_Type}}</p></td>
+                </tr>
+                <tr ng-if="college1.College_Degree_Courses.length">
+                    <td>
+                        Degree Courses
+                      <ul style="text-align: left; padding-left: 120px;" ng-repeat="Courses in college1.College_Degree_Courses">
+                        <li class="fa fa-check-circle-o">{{Courses.name}}</li><br>
+                      </ul>
+                    </td>
+
+                    
+                </tr>
+                <tr ng-if="college1.College_Diploma_Courses.length">
+                  <td>
+                        Diploma Courses
+                      <ul style="text-align: left; padding-left: 120px;" ng-repeat="Courses in college1.College_Diploma_Courses">
+                        <li class="fa fa-check-circle-o">{{Courses.name}}</li><br>
+                      </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>Teaching Faculty<br>{{college1.College_Faculty}}</td>
+                </tr>
+                <tr>
+                  <td>Campus Companies<br>{{college1.College_Companies}}</td>
+                </tr>
+                <tr>
+                  <td>Hostel<br>
+                      <p class="fa fa-hotel" ng-if="(college1.College_Facility | filter:{name:'Boys Hostel'}).length"> Boys</p><br>
+                      <p class="fa fa-hotel" ng-if="(college1.College_Facility | filter:{name:'Girls Hostel'}).length"> Girls</p>
+                    </td>
+                </tr>
+                <tr>
+                  <td> College Facility
+                    <ul style="text-align: left; padding-left: 120px;" ng-repeat="Facility in college1.College_Facility">
+                        <li class="fa fa-desktop">{{Facility.name}}</li><br>
+                      </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td><img class="tableimg" src="{{college1.profile}}" alt="college1image"></td>
+                </tr>
+             </tbody>
+             <tfoot class="tablehead">
+               <th><center><a class="btn btn-info" style="background-color: transparent; border-width: 2px; border-radius: 50px;" ng-click="getClg(college1._id)"> Click Here</a></center></th>
+             </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <!-- ======================
+            Second college       
+      ======================= -->
+      <div class="col-sm-5 col-lg-5" style="padding-left: 0%;">
+      <br>
+        <div class="table-responsive">
+          <table class="table table-condensed table-hover tablestyle">
+            <thead class="tablehead">
+              <center>
+                <tr>
+                  <th>{{college2.College_Name}}</th>
+                </tr>
+              </center>
+            </thead>
+             <tbody>
+                <tr>
+                  <td>{{college2.Locality}}, {{college2.Street}}, {{college2.Dist}},{{college2.Pincode}}</td>
+                </tr>
+                <tr class="rowstyle">
+                  <td><p class="fa fa-google">{{college2.College_Type}}</p></td>
+                </tr>
+                <tr ng-if="college2.College_Degree_Courses.length">
+                    <td>
+                        Degree Courses
+                      <ul style="text-align: left; padding-left: 120px;" ng-repeat="Courses in college2.College_Degree_Courses">
+                        <li class="fa fa-check-circle-o">{{Courses.name}}</li><br>
+                      </ul>
+                    </td>
+
+                    
+                </tr>
+                <tr ng-if="college2.College_Diploma_Courses.length">
+                  <td>
+                        Diploma Courses
+                      <ul style="text-align: left; padding-left: 120px;" ng-repeat="Courses in college2.College_Diploma_Courses">
+                        <li class="fa fa-check-circle-o">{{Courses.name}}</li><br>
+                      </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td>Teaching Faculty<br>{{college2.College_Faculty}}</td>
+                </tr>
+                <tr>
+                  <td>Campus Companies<br>{{college2.College_Companies}}</td>
+                </tr>
+                <tr>
+                  <td>Hostel<br>
+                      <p class="fa fa-hotel" ng-if="(college2.College_Facility | filter:{name:'Boys Hostel'}).length"> Boys</p><br>
+                      <p class="fa fa-hotel" ng-if="(college2.College_Facility | filter:{name:'Girls Hostel'}).length"> Girls</p>
+                  </td>    
+                </tr>
+                <tr>
+                  <td> College Facility
+                    <ul style="text-align: left; padding-left: 120px;" ng-repeat="Facility in college2.College_Facility">
+                        <li class="fa fa-desktop">{{Facility.name}}</li><br>
+                        
+                      </ul>
+                    </td>
+                </tr>
+                <tr>
+                  <td><img class="tableimg" src="{{college2.profile}}" alt="college2image"></td>
+                </tr>
+             </tbody>
+             <tfoot class="tablehead">
+               <th><center><a class="btn btn-info" style="background-color: transparent; border-width: 2px; border-radius: 50px;" ng-click="getClg(college2._id)"> Click Here</a></center></th>
+             </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-1 col-lg-1">
+        
+      </div>
+    </div>
+  </div>
+</section>  

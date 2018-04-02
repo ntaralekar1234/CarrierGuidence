@@ -1,0 +1,24 @@
+body
+{
+	font-family: 'Noto Serif', serif;
+	background-color: #ede8ea;/*rgba(142, 113, 124, 0.18);*/
+	overflow-x: hidden;
+	font-family: 'Slabo 27px', serif;
+}
+.featureDiv
+{
+	padding-left: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+.featureDiv p
+{
+	font-size: 18px;
+	text-align: justify;
+}
+.featureDiv:hover
+{
+	box-shadow: 0px 0px 15px 0px #e75367;
+	border-radius: 10px;
+}

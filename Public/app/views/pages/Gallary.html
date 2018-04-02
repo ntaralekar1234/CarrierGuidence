@@ -1,0 +1,160 @@
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		<div class="row">
+			<div class="panel-body">
+				<div class="col-md-12 w3ls-graph" style="margin-bottom: 20px;">
+					<!--agileinfo-grap-->
+					<div class="agileinfo-grap">
+						<div class="agileits-box">
+							<header class="agileits-box-header clearfix">
+								<h3>College Gallary</h3>			
+							</header>
+							<div class="agileits-box-body clearfix">
+								<div id="hero-area"></div>
+								<div class="row">
+									<div class="col-md-3 profile">
+										<div class="card">
+		  									<img id="campusimg" src="Gallary/clg.jpg" alt="Avatar" style="width:100%" >	
+		  								</div>
+		  								<label class="btn btn-success" for="upload-file-selector" style="margin-top: 20px; margin-left: 10%;">
+            								<input id="upload-file-selector"  type="file" ng-model="img" accept="image/*" onchange="angular.element(this).scope().campusFiles(this)">
+           												 Upload Campus Images
+        								</label>
+									</div>
+									<div class="col-md-7">
+										<div class="row" ng-if="gallary.length != 0">
+											<div class="col-md-4" style="height: 200px;" ng-repeat="campus in gallary">
+		  										<img id="profile" src="{{campus.Campus_path}}" alt="Avatar" style="width:100%" >
+
+		  									</div>
+		  									
+										</div>
+										
+									</div>
+									<button type="button" class="btn btn-success col-md-2" style="float: right; margin-top: 300px" ng-click="campus();">Save</button>
+									<div class="alert alert-success" ng-show="GallaryMsg">
+          								<i class="fa fa-spinner fa-spin"></i>{{ GallaryMsg }}
+        							</div>
+								</div>
+							</div>	
+						</div>	
+					</div>	
+				</div>
+
+				<div class="col-md-12 w3ls-graph"  style="margin-bottom: 20px;">
+					<!--agileinfo-grap-->
+					<div class="agileinfo-grap">
+						<div class="agileits-box">
+							<header class="agileits-box-header clearfix">
+								<h3>College Classroom</h3>			
+							</header>
+							<div class="agileits-box-body clearfix">
+								<div id="hero-area"></div>
+								<div class="row">
+									<div class="col-md-3 profile">
+										<div class="card">
+		  									<img id="classroom" src="Gallary/Classroom.jpeg" alt="Avatar" style="width:100%" >	
+		  								</div>
+		  								<label class="btn btn-success" for="upload-file-selector1" style="margin-top: 20px; margin-left: 10%;">
+            								<input id="upload-file-selector1" type="file" ng-model="img" accept="image/*" onchange="angular.element(this).scope().classroomFiles(this)">
+           												 Upload Classroom Images
+        								</label>
+									</div>
+									<div class="col-md-9">
+										<div class="row" ng-if="Classroom_Gallary.length != 0">
+											<div class="col-md-4" style="height: 200px;" ng-repeat="Classroom in Classroom_Gallary">
+		  										<img id="profile" src="{{Classroom.Classroom_path}}" alt="Avatar" style="width:100%" >
+		  									</div>
+		  									
+										</div>
+										<button type="button" class="btn btn-success col-md-2" style="float: right; margin-top: 200px" ng-click="classroom();">Save</button>
+										<div class="alert alert-success" ng-show="classroomMsg">
+          									<i class="fa fa-spinner fa-spin"></i>{{ classroomMsg }}
+        								</div>
+									</div>
+								</div>
+							</div>	
+						</div>	
+					</div>	
+				</div>
+
+				<div class="col-md-12 w3ls-graph"  style="margin-bottom: 20px;">
+					<!--agileinfo-grap-->
+					<div class="agileinfo-grap">
+						<div class="agileits-box">
+							<header class="agileits-box-header clearfix">
+								<h3>College Labs</h3>			
+							</header>
+							<div class="agileits-box-body clearfix">
+								<div id="hero-area"></div>
+								<div class="row">
+									<div class="col-md-3 profile">
+										<div class="card">
+		  									<img id="labspic" src="Gallary/lab.jpg" alt="Avatar" style="width:100%" >	
+		  								</div>
+		  								<label class="btn btn-success" for="upload-file-selector2" style="margin-top: 20px; margin-left: 10%;">
+            								<input id="upload-file-selector2" type="file" ng-model="img" accept="image/*" onchange="angular.element(this).scope().labsFiles(this)">
+           												 Upload College Labs Images
+        								</label>
+									</div>
+									<div class="col-md-9">
+										<div class="row" ng-if="Labs_Gallary.length != 0">
+											<div class="col-md-4" style="height: 200px;" ng-repeat="Labs in Labs_Gallary">
+		  										<img id="" src="{{Labs.Lab_path}}" alt="Avatar" style="width:100%" >
+		  									</div>
+		  									
+										</div>
+										<button type="button" class="btn btn-success col-md-2" style="float: right; margin-top: 200px" ng-click="labs();">Save</button>
+										<div class="alert alert-success" ng-show="labsMsg">
+          									<i class="fa fa-spinner fa-spin"></i>{{ labsMsg }}
+        								</div>
+									</div>
+								</div>
+							</div>	
+						</div>	
+					</div>	
+				</div>
+
+				<div class="col-md-12 w3ls-graph"  style="margin-bottom: 20px;">
+					<!--agileinfo-grap-->
+					<div class="agileinfo-grap">
+						<div class="agileits-box">
+							<header class="agileits-box-header clearfix">
+								<h3>College Annual Functions</h3>			
+							</header>
+							<div class="agileits-box-body clearfix">
+								<div id="hero-area"></div>
+								<div class="row">
+									<div class="col-md-3 profile">
+										<div class="card">
+		  									<img id="annualPic" src="Gallary/annual.jpg" alt="Avatar" style="width:100%" >	
+		  								</div>
+		  								<label class="btn btn-success" for="upload-file-selector3" style="margin-top: 20px; margin-left: 10%;">
+            								<input id="upload-file-selector3" type="file" ng-model="img" accept="image/*" onchange="angular.element(this).scope().AnnualFiles(this)">
+           												 Upload Annual Functions Images
+        								</label>
+									</div>
+									<div class="col-md-9">
+										<div class="row" ng-if="Annual_Function_Gallary.length != 0">
+											<div class="col-md-4" style="height: 200px;" ng-repeat="Annualfun in Annual_Function_Gallary">
+		  										<img id="profile" src="{{Annualfun.Annual_Function_path}}" alt="Avatar" style="width:100%" >
+		  									</div>
+		  									
+										</div>
+										<button type="button" class="btn btn-success col-md-2" style="float: right; margin-top: 200px" ng-click="annualFun();">Save</button>
+										<div class="alert alert-success" ng-show="annualFunMsg">
+          									<i class="fa fa-spinner fa-spin"></i>{{ annualFunMsg }}
+        								</div>
+									</div>
+								</div>
+							</div>	
+						</div>	
+					</div>	
+				</div>
+
+			</div>
+		</div>
+	</section>
+</section>	
+

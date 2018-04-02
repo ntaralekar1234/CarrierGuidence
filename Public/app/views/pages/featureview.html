@@ -1,0 +1,45 @@
+<section id="hero" >
+<div class="hero-container">
+      
+  
+      <div class="row featured">
+         <h1 style="text-align: center; color: #000207">featured colleges</h1>
+        <div class="col-sm-12 col-lg-8 featurebox" ng-repeat = "clgs in FeatureClgs">
+          <div class="row">
+            <div class="col-sm-4 col-lg-3 imagebox">
+              <a href="collegeview.html"><img class="imageboximage" src="{{clgs.profile}}" alt="College image"></a>
+            </div>
+            <div class="col-sm-8 col-lg-9">
+              <ul style="text-align: left; padding: 1%;">
+                <ol><strong>College Name:</strong> {{clgs.College_Name}}</ol>
+                <ol><strong>University:</strong> {{clgs.University_Name}}</ol>
+                <ol><strong>College Program: </strong>
+                  <ol class="fa fa-bookmark-o" ng-if="(clgs.College_Program | filter :{name:'Degree'}).length"> Degree</ol>
+                  <ol class="fa fa-bookmark-o" ng-if="(clgs.College_Program | filter :{name:'Diploma'}).length"> Diploma</ol>
+                </ol>
+                <ol><strong>College Type: </strong>
+                  <ol class="fa fa-google"> {{clgs.College_Type}}</ol>
+                </ol>
+                <ol><strong>Railway Station: </strong>
+                  <ol class="fa fa-train">{{clgs.Railway_station}}</ol>
+                </ol>
+                <ol><strong>Bus Stand: </strong>
+                  <ol class="fa fa-bus"> {{clgs.Bus_station}}</ol>
+                </ol>
+              </ul>
+
+              <center><a href="#" class="btn btn-info" style="width: 80%" ng-click="getClg(clgs._id)"> Click Here </a></center>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   </div>  
+ </section>   
+
+      
+      
+
+     
+            
+      

@@ -1,0 +1,26 @@
+body
+{
+	font-family: 'Noto Serif', serif;
+	background-color: #ede8ea;/*rgba(142, 113, 124, 0.18);*/
+	overflow-x: hidden;
+}
+.menuBar
+{
+	background: #900C3F;
+	color:#fff;
+	position: fixed;
+	height: 70px;
+	width: 100%;
+	z-index: 5;
+}
+.container
+{
+	padding-top: 70px;
+}
+.container p
+{
+	font-family: 'Slabo 27px', serif;
+	color: #000;
+	text-align: justify;
+	font-size: 20px;
+}

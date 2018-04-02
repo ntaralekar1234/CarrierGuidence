@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <base href="/">
+	<meta charset="utf-8">
+  <title>Home-Career Guidance</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/gg.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 
+  <!-- <link href="Assets/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="Assets/css/animate.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Assets/css/style.css">
+  <link href="Assets/css/style-responsive.css" rel="stylesheet"/>
+  <link href="Assets/css/home.css" rel="stylesheet"/>
+  <link rel="stylesheet" type="text/css" href="Assets/css/owl.carousel.css">
+  <link rel="stylesheet" type="text/css" href="Assets/css/owl.theme.default.css">
+
+
+	<!-- ang CDN -->
+	
+</head>
+<body ng-app="userApp" ng-controller = "mainCtrl">
+  
+   <!--==========================
+  Header
+  ============================-->
+  <header id="header" ng-hide="isLoggedIn">
+
+      <div class="row">      
+        <div class="col-sm-1">
+              
+        </div>
+
+        <div class="col-lg-4">
+          <div id="logo" class="pull-left">
+            <a href="/"><h1 style="font-family: Berlin Sans FB; font-size: 30px; color: #00bcd4;">Career Guidance</h1></a>
+            <!-- Uncomment below if you prefer to use a text logo -->
+           
+          </div>
+        </div>
+
+        <!-- Search Bar And Button  -->
+        <div class="col-sm-4">
+          <div class="row">
+            <div class="col-sm-10" style="padding: 0%;">
+              <input class="form-control" id="searchText" type="text" name="" ng-model="searchText" placeholder="Search Colleges here" style="width: 100%;" autocomplete="off">
+
+              
+            </div>
+            <div class="col-sm-2" style="padding: 0%;">
+              <button type="submit" class="btn btn-info">Submit</button>
+            </div>
+          </div>  
+        </div> <!-- search bar -->
+
+        <div class="col-sm-1">
+             
+        </div>
+
+        <!-- university and student login -->
+        <div class="col-sm-2" style="padding: 15px 0px 0px 10px;">
+          <a href="#" data-toggle="tooltip" data-placement="bottom" title="College Login/Registration" onclick="document.getElementById('id01').style.display='block'">
+          <i class="fa fa-university fa-lg" aria-hidden="true" style="color:#fff; size: 100%"></i>
+          </a>&emsp;
+        </div>
+      </div>
+      <div class="row" id="searchdiv" style="display: none;"> 
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="margin-left: 120px; margin-top: -8px;" >
+          
+          <div ng-repeat="clg in Colleges | filter:searchText" style="background-color: #fff" class="col-sm-10 resultdiv">
+              <a href="#" ng-click="showClg(clg._id)" style="color: #362712;"><strong>{{clg.College_Name | uppercase}}</strong>
+                
+              </a>
+
+          </div>  
+
+        </div>
+      </div>  
+    
+  </header>
+
+  <!--header start-->
+<header class="header fixed-top clearfix" ng-show="isLoggedIn">
+<!--logo start-->
+<div class="brand">
+    <a href="/" class="logo">
+     C.G.
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div -->
+<!--logo end-->
+<div class="nav notify-row" id="top_menu">
+    <!--  notification start -->
+    <ul class="nav top-menu">
+        
+       
+    </ul>
+    <!--  notification end -->
+</div>
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <!--img alt="" src="Assets/images/2.png" -->
+                <span class="username">{{ClgName}}</span>
+                <!-- <b class="caret"></b> -->
+            </a>
+            <ul class="dropdown-menu extended logout" style="float: right;">
+                <li><a href="/EditInfo"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <!--li><a href="#"><i class="fa fa-cog"></i> Settings</a></li -->
+                <li><a href="#" ng-click="logout()"><i class="fa fa-key"></i> Log Out</a></li>
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+       
+    </ul>
+    <!--search & user info end-->
+</div>
+</header>
+<!--header end-->
+<!--sidebar start-->
+<aside ng-show="isLoggedIn">
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li>
+                    <a class="active" href="/Dashboard">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-user"></i>
+                        <span>Your Account</span>
+                    </a>
+                    <ul class="sub">
+                        <!--li><a href="/viewInfo">View Info</a></li -->
+                        <li><a href="/EditInfo">Update Information</a></li>
+                        <li><a href="/ChangePass">Change Password</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/Gallary">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>Gallary</span>
+                    </a>
+                </li>
+                
+                <!--li>
+                    <a href="#">
+                        <i class="fa fa-gift"></i>
+                        <span>Product</span>
+                    </a>
+                </li -->
+            </ul>            
+        </div>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+
+
+
+<div ng-view  autoscroll="true"></div>
+
+<!--==========================
+    Footer
+  ============================-->
+  <footer id="footer" style="margin-bottom: 0;">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Career Guidance</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        ######## <a href="#">#####</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+<!-- College login modal -->
+<div id="id01" class="modal" ng-controller="clgAuthCtrl" ng-hide="colReg1">
+  
+  <form name="LoginForm" class="modal-content animate">
+  	
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img/img_avatar2.png" alt="Avatar" class="avatar">
+      <center><h2>College Login</h2></center>
+    </div>
+
+    <div class="info">
+      <label><b>Email</b></label>
+      <input type="email" class="form-control" placeholder="Enter Email Id" name="email" ng-model="LogData.ClgEmail" required>
+
+      <label><b>Password</b></label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="psw" ng-model="LogData.ClgPass" required>
+
+      <button ng-click="LoggClg(LogData);" class="btn btn-info" ng-disabled="LoginForm.$invalid">Login</button>
+        <div class="alert alert-success" ng-show="CRsuccessMsg">
+          <i class="fa fa-spinner fa-spin"></i>{{ CRsuccessMsg }}
+        </div>
+
+        <div class="alert alert-danger" ng-show="CRerrorMsg">
+            {{ CRerrorMsg }}
+        </div>
+    </div>
+    <div class="info" style="background-color:#f1f1f1">
+      <button type="button" data-toggle="tooltip" data-placement="bottom" title="College Registration" onclick="document.getElementById('colReg1').style.display='block'; document.getElementById('id01').style.display='none'" class="cancelbtn btn btn-success">Register</button>
+    </div>
+  </form>
+
+
+</div>
+
+
+
+<!-- College Registration modal1 -->
+<div id="colReg1" class="modal">
+  
+  <form name="ClgRegForm1" class="modal-content animate">
+
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('colReg1').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <center><h2>College Registration</h2></center>
+    </div>
+
+    <div class="info">
+
+      <label><b>College Name</b></label>
+      <input type="text" class="form-control" placeholder="Enter Collge Name" ng-model="formData.clgName" required>
+		    
+	  <br>
+	  <label><b>College Type</b></label><br>
+      <input type="radio" name="clgType" ng-model="formData.clgType" value="Government">&emsp;Government<br>
+      <input type="radio" name="clgType" ng-model="formData.clgType" value="Autonomous">&emsp;Autonomous<br>
+      <input type="radio" name="clgType" ng-model="formData.clgType" value="Non-Autonomous">&emsp;Non-Autonomous<br>
+      <br>
+	  <br>
+
+	  <label><b>University Name</b></label>
+      <input type="text" class="form-control" placeholder="Enter University Name" ng-model="formData.UniName" ng-disabled="formData.clgType == 'Autonomous'">
+
+      <label><b>Email</b></label>
+      <input type="email" class="form-control" placeholder="Enter Email Id" name="email" ng-model="formData.email" required>
+
+      <label><b>College Website</b></label>
+      <input type="text" class="form-control" placeholder="Enter College Website" ng-model="formData.clgweb" required>
+
+      <label><b>Password</b></label>
+      <input type="password" class="form-control" placeholder="Enter Password" ng-model="formData.clgpass" required>
+
+      <label><b>Confirm Password</b></label>
+      <input type="password" class="form-control" placeholder="Confirm Password" ng-model="formData.clgCnfpass" required>
+
+      <label ng-if="formData.clgCnfpass">
+        <b ng-show="formData.clgpass != formData.clgCnfpass" class="text-danger">Password Not Match</b>
+        <b ng-show="formData.clgpass == formData.clgCnfpass" class="text-success">Password is Match</b>
+      </label>
+
+      <button onclick="document.getElementById('colReg2').style.display='block'; document.getElementById('colReg1').style.display='none'" class="btn btn-success" ng-disabled="ClgRegForm1.$invalid">Next</button>
+    </div>
+        
+  </form>
+     
+</div>
+
+<!-- College Registration modal2 -->
+<div id="colReg2" class="modal">
+  
+  <form name="ClgRegForm2" class="modal-content animate">
+
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('colReg2').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <center><h2>Welcome {{formData.clgName}}</h2></center>
+    </div>
+
+    <div class="info">
+
+	  <label><b>College Program</b></label><br>
+    <p ng-repeat="Program in clgProgram">
+      <input type="checkbox" name="clgProg" ng-model="clgProg" ng-checked="exist(Program)" ng-click="toggleSelection(Program)">&emsp;{{Program.name}}<br>
+      
+     </p>
+     <div class="row" ng-if="degree">
+     <label><b>DegreeCourses</b></label><br>
+
+        <div class="col-sm-3" style="padding-top: 5px" ng-repeat="courses in clgCourses"><input type="checkbox" name="clgCourse" ng-model="degreeCourse" ng-checked="degreecourse(courses)" ng-click="toggledegreeCourseSelection(courses)">&emsp;{{courses.name}}</div>
+      </div>   
+      <br>
+      <div class="row" ng-if="diploma">
+      <label><b>DiplomaCourses</b></label><br>
+        <div class="col-sm-3" style="padding-top: 5px" ng-repeat="courses in clgCourses"><input type="checkbox" name="clgCourse" ng-model="diplomaCourse" ng-checked="diplomacourse(courses)" ng-click="togglediplomaCourseSelection(courses)">&emsp;{{courses.name}}</div>
+       </div>   
+      <br>
+
+	  <label><b>Year of Establishment</b></label>
+      <input type="date" class="form-control" ng-model="formData.clgdate" required>
+
+      <br><label><b>College Facility</b></label><br>
+	    <div class="row">
+      	<div class="col-sm-3" style="padding-top: 5px" ng-repeat="facility in clgFacility"><input type="checkbox" name="facility" ng-model="clgfacility" ng-checked="cfacility(facility)" ng-click="toggleFacilitySelection(facility)">&emsp;{{facility.name}}</div>
+      </div>
+
+      <br><label><b>How to reach</b></label>
+      <div class="row">
+      	<div class="col-sm-2" style="padding-top: 25px">Railway Station:</div>
+      	<div class="col-sm-4" style="padding: 5px"><input type="text" class="form-control" placeholder="Near By Railway Station" ng-model="formData.Railway" required></div>
+
+      	<div class="col-sm-1" style="padding-top: 25px">Bus Stop:</div>
+      	<div class="col-sm-4" style="padding: 5px"><input type="text" class="form-control" placeholder="Near By Bus Stop" ng-model="formData.Bus" required></div>
+
+      </div>
+      <label><b>Contact Details</b></label>
+      <div class="row">
+      	<div class="col-sm-2" style="padding-top: 25px">Phone number:</div>
+      	<div class="col-sm-4" style="padding: 5px"><input type="text" class="form-control" placeholder="Phone number" ng-model="formData.Phone" required></div>
+      	<div class="col-sm-1" style="padding-top: 20px">Fax number:</div>
+      	<div class="col-sm-4" style="padding: 5px"><input type="text" class="form-control" placeholder="Fax number" ng-model="formData.fax" required></div>
+      </div>
+       <label><b>College Image</b></label>
+      <input type="file" name="file" ng-model="img" accept="image/*" onchange="angular.element(this).scope().filesChangerd(this)">
+      <img id="output" style="width: 200px;" name="imgfile"><br>
+      
+      <button ng-click="ClgRegister()" class="btn btn-info" ng-disabled="ClgRegForm2.$invalid">Register</button>
+
+      <button onclick="document.getElementById('colReg2').style.display='none'; document.getElementById('colReg1').style.display='block'" class="cancelbtn btn btn-success">back</button>
+
+     <div class="alert alert-success" ng-show="CRsuccessMsg">
+          <i class="fa fa-spinner fa-spin"></i><br>{{ CRsuccessMsg }}
+        </div>
+
+        <div class="alert alert-danger" ng-show="CRerrorMsg">
+            {{ CRerrorMsg }}
+        </div>
+    </div>
+     
+
+    
+  </form>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+
+    <script src="app/controllers/mainCtrl.js"></script>
+    <script src="app/controllers/AuthCtrl.js"></script>
+    <script src="app/controllers/DashboardCtrl.js"></script>
+    <script src="app/controllers/homeCtrl.js"></script>
+    <script src="app/controllers/featureCtrl.js"></script>
+    <script src="app/controllers/compareCtrl.js"></script>
+    <!-- Services js -->
+   
+    <script src="app/Services/ClgServices.js"></script>
+    <script src="app/Services/AuthService.js"></script>
+    
+   
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js"></script>
+    <script src="Assets/js/bootstrap.bundle.min.js"></script>
+    <script src="Assets/js/easing.min.js"></script>
+    <script src="Assets/js/wow.min.js"></script>
+   <!--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8HeI8o-c1NppZA-92oYlXakhDPYR7XMY"></script> -->
+
+    <script src="Assets/js/waypoints.min.js"></script>
+    <script src="Assets/js/counterup.min.js"></script>
+    <script src="Assets/js/hoverIntent.js"></script>
+    <script src="Assets/js/superfish.min.js"></script>
+
+    <script src="Assets/js/contactform.js"></script>
+   
+
+    <script src="Assets/js/jquery.dcjqaccordion.2.7.js"></script>
+     <script src="Assets/js/scripts.js"></script>
+    <script src="Assets/js/jquery.slimscroll.js"></script>
+    <script src="Assets/js/jquery.nicescroll.js"></script>
+     
+    <script src="Assets/js/jquery.scrollTo.js"></script>
+    <script src="Assets/js/main.js"></script>
+    <script src="Assets/js/owl.carousel.min.js"></script>
+
+    
+   
+   
+   
+
+    
+		
+		<script>
+		// Get the modal
+		var modal = document.getElementById('id01');
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+		</script>
+
+		<script>
+			$(document).ready(function(){
+    		$('[data-toggle="tooltip"]').tooltip();
+
+        $('#searchText').keyup(function(e)
+        {
+          var key = e.which;
+          //alert(key);
+          if($('#searchText').val() != "" && key != 13)
+          {
+            $('#searchdiv').css('display', 'block');
+
+               var valThis = $('#searchText').val().toLowerCase();
+              //alert(valThis);
+            $('.resultdiv>a').each(function()
+            {
+               var text = $(this).text().toLowerCase(); 
+              (text.match(valThis)) ? $(this).show() : $(this).hide(); 
+               });
+          }
+          else
+          {
+            $('#searchdiv').css('display', 'none');
+          }
+        });
+
+        $(document).mouseup(function(e) 
+        {
+          var container = $("#searchdiv");
+
+          // if the target of the click isn't the container nor a descendant of the container
+          if (!container.is(e.target) && container.has(e.target).length === 0) 
+          {
+            container.hide();
+            document.getElementById("searchText").value="";
+          }
+        });
+
+       
+       
+			});
+		</script>
+</body>
+</html>

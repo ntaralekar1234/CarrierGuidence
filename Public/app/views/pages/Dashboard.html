@@ -1,0 +1,238 @@
+<section id="main-content">
+  <section class="wrapper">
+
+      <div class="row" style="height: 400px">
+        <div class="col-sm-12">
+          <img src="{{profile}}" style="width: 100%; height: 400px" class="img-responsive"></div>
+      </div>
+      <br>
+      <!-- //market-->
+      <div class="market-updates">
+          <div class="col-md-3 market-update-gd" ng-click="Aboutus();">
+            <div class="market-update-block clr-block-2">
+              <div class="col-md-4 market-update-right">
+                <i class="fa fa-users"> </i>
+              </div>
+               <div class="col-md-8 market-update-left">
+               <h4>About Us</h4>
+              <!--h3>13,500</h3>
+              <p>View Your Product</p -->
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <div class="col-md-3 market-update-gd" ng-click="Coures();">
+            <div class="market-update-block clr-block-1">
+              <div class="col-md-4 market-update-right">
+                <i class="fa fa-graduation-cap" ></i>
+              </div>
+              <div class="col-md-8 market-update-left">
+              <h4>Coures</h4>
+               
+                <!--p>connected</p -->
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <div class="col-md-3 market-update-gd" ng-click="facility();">
+            <div class="market-update-block clr-block-3">
+              <div class="col-md-4 market-update-right">
+                <i class="fa fa-pie-chart"></i>
+              </div>
+              <div class="col-md-8 market-update-left">
+                <h4>Facility</h4>
+                <!--h3>1,500</h3>
+                <p> in this Month</p -->
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+          <div class="col-md-3 market-update-gd" ng-click="ContactUs();">
+            <div class="market-update-block clr-block-4">
+              <div class="col-md-4 market-update-right">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-8 market-update-left">
+                <h4>Contact Us</h4>
+                <!--h3>1,500</h3>
+                <p>Successfully Places</p -->
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+           <div class="clearfix"> </div>
+      </div>
+      <!-- About Us -->
+      <div class="container agileinfo-grap" ng-show="aboutus">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <form> 
+                  <center><h1>About Us</h1></center>
+                  <br>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-4 col-form-label">College</label>
+                <div class="col-sm-8">
+                   <label class="col-form-label"> {{ClgName}}</label>  
+                  </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">University</label>
+                <div class="col-sm-8">
+                  <label class="col-form-label"> {{University_Name}}</label>  
+                </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">Date Of Establish</label>
+                <div class="col-sm-8">
+                  <label class="col-form-label"> {{Date_Of_Establish | date}}</label>  
+                </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">College Type</label>
+                <div class="col-sm-8">
+                  <label class="col-form-label"> {{College_Type}}</label>  
+                </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">College Program</label>
+                <div class="col-sm-4" ng-repeat="Program in College_Program">
+                  <label class="col-form-label"> {{Program.name}}</label>  
+                </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">Few Words About College</label>
+                <div class="col-sm-8">
+                  <label class="col-form-label">{{College_AboutUs}}</label>  
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+    </div>
+     <!-- End About Us -->
+
+     <!-- Courses -->
+      <div class="container agileinfo-grap" ng-show="Courses">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <form> 
+                  <center><h1>Courses you Provided</h1></center>
+                  <br>
+              <div class="form-group row" ng-if='College_Degree_Courses.length'>
+                <h5>Degree Course</h5>
+                <div class="col-sm-4" ng-repeat="Course in College_Degree_Courses">
+                   <label class="col-form-label"> {{Course.name}}</label> <br> 
+                </div>
+              </div>
+
+              <div class="form-group row" ng-if='College_Diploma_Courses.length'>
+                <h5>Diploma Course</h5>
+                <div class="col-sm-4" ng-repeat="Course in College_Diploma_Courses">
+                   <label class="col-form-label"> {{Course.name}}</label> <br> 
+                </div>
+              </div>
+              
+            </form>
+          </div>
+          
+        </div>
+    </div>
+     <!-- End Courses -->
+
+     <!-- Facility -->
+      <div class="container agileinfo-grap" ng-show="Facility">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <form> 
+                  <center><h1>Facility you Provided</h1></center>
+                  <br>
+              <div class="form-group row">
+                
+                <div class="col-sm-4" ng-repeat="Facilities in College_Facility">
+                   <label class="col-form-label"> {{Facilities.name}}</label>  
+                  </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+    </div>
+     <!-- End Facility -->
+
+     <!-- Contact us -->
+      <div class="container agileinfo-grap" ng-show="Contactus">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <form> 
+                  <center><h1>Contact us</h1></center>
+                  <br>
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-4 col-form-label">Address</label>
+                  <div class="col-sm-8">
+                    <label class="col-form-label">{{ClgName}} {{Locality}}</label><br>
+                     <label class="col-form-label">{{Street}}</label><br>
+                    <label class="col-form-label">Dist - {{Dist}}</label>
+                    <label class="col-form-label">Tal- {{Tal}}</label><br>
+                    <label class="col-form-label">State- {{State}}</label><br>
+                    <label class="col-form-label">Pincode - {{Pincode}}</label>      
+                  </div>
+                </div>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-4 col-form-label">Email Id</label>
+                <div class="col-sm-8">
+                   <label class="col-form-label"> {{ClgEmail}}</label>  
+                  </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">Website</label>
+                <div class="col-sm-8">
+                  <label class="col-form-label"> {{Website}}</label>  
+                </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">Phone Number</label>
+                <div class="col-sm-8">
+                  <label class="col-form-label"> {{phone_Number}}</label>  
+                </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">Fax Number</label>
+                <div class="col-sm-8">
+                  <label class="col-form-label"> {{Fax_Number}}</label>  
+                </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">Near Bus Stop</label>
+                <div class="col-sm-4">
+                  <label class="col-form-label"> {{Bus_station}}</label>  
+                </div>
+              </div>
+              <div class="form-group row" >
+                <label for="inputPassword" class="col-sm-4 col-form-label">Near Railway Station</label>
+                <div class="col-sm-4">
+                  <label class="col-form-label"> {{Railway_station}}</label>  
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+    </div>
+     <!-- End Contact us -->
+
+
+
+
+
+
+  </section>
+   
+</section>
+
+   
+    

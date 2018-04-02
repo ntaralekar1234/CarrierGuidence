@@ -1,0 +1,350 @@
+
+
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		
+		<div class="row">
+			<div class="panel-body">
+				<div class="col-md-12 w3ls-graph">
+					<!--agileinfo-grap-->
+						<div class="agileinfo-grap">
+							<div class="agileits-box">
+								<header class="agileits-box-header clearfix">
+									<h3>College Profile</h3>
+										<div class="toolbar">
+											
+											
+										</div>
+								</header>
+								<div class="agileits-box-body clearfix">
+									<div id="hero-area"></div>
+									<div class="row">
+										<div class="col-md-3 profile">
+											<div class="card">
+		  										<img id="profile" src="{{profile}}" alt="Avatar" style="width:100%" >
+		  										
+		  									</div>
+		  									
+
+		  										<label class="btn btn-success" for="upload-file-selector" style="margin-top: 20px; margin-left: 20%;">
+            											<input id="upload-file-selector" type="file" ng-model="img" accept="image/*" onchange="angular.element(this).scope().filesChanged(this)">
+           												 Upload Profile
+        										</label>
+		  										
+
+		  									
+		  								</div>
+
+		  								<div class="col-md-9">
+
+		  									<form  name="clgInfo" class="form-horizontal" role="form">
+										          <div class="form-group">
+										            <label class="col-md-3 control-label">College Name:</label>
+										            <div class="col-md-8">
+										              <input class="form-control" type="text" ng-model="ClgName" required>
+										            </div>
+										          </div>
+										          <div class="form-group">
+										            <label class="col-md-3 control-label">University Name:</label>
+										            <div class="col-md-8">
+										              <input class="form-control" type="text" ng-model="University_Name" required>
+										            </div>
+										          </div>
+										          <div class="form-group">
+										            <label class="col-md-3 control-label">Date Of Establish</label>
+										            <div class="col-md-8">
+										              <input class="form-control" type="Date" ng-model="Date_Of_Establish" required>
+										            </div>
+										          </div>
+										          <div class="form-group">
+										            <label class="col-md-3 control-label">College Type</label>
+										            <div class="col-md-8">
+										              <input class="form-control" type="text" ng-model="College_Type" required>
+										            </div>
+										          </div>
+										           <div class="form-group">
+										            <label class="col-md-3 control-label">Few Words About College</label>
+										            <div class="col-md-8">
+										               <textarea class="form-control" rows="5" ng-model="College_AboutUs" required></textarea>
+										            </div>
+										          </div>
+
+										          <div class="form-group">
+										            <label class="col-md-3 control-label">Number Of faculty</label>
+										            <div class="col-md-8">
+										               <input class="form-control" type="text" ng-model="College_Faculty" required>
+										            </div>
+										          </div>
+
+										          <div class="form-group">
+										            <label class="col-md-3 control-label">Campus Campanies</label>
+										            <div class="col-md-8">
+										               <input class="form-control" type="text" ng-model="College_Companies" required>
+										            </div>
+										          </div>
+										         
+										           
+        										</form>
+											
+		  								</div>		
+  									</div>
+  									
+									
+									
+								</div>
+							</div>
+						</div>
+	<!--//agileinfo-grap-->
+					<br><br>
+				<div class="agileinfo-grap">
+							<div class="agileits-box">
+								<header class="agileits-box-header clearfix">
+									<h3>College Courses</h3>
+										<div class="toolbar">
+											
+											
+										</div>
+								</header>
+								<div class="agileits-box-body clearfix">
+									<div id="hero-area"></div>
+									<div class="row">
+										
+										<div class="col-md-2"></div>
+		  								<div class="col-md-8">
+
+		  									<form class="form-horizontal" role="form">
+										          <div class="form-group" ng-if="College_Degree_Courses.length">
+										            <label class="control-label text-info">Degree Courses</label>
+										            <br><br>
+										            <div class="col-md-4" ng-repeat="Course in clgCourses">
+
+										            	<label><input type="checkbox" ng-checked="exist(Course.name)" ng-click="toggleSelection(Course)">&nbsp;{{Course.name}}</label>
+														
+										              
+										            </div>
+										          </div>
+
+										          <div class="form-group" ng-if="College_Diploma_Courses.length">
+										            <label class="control-label text-info">Diploma Courses</label>
+										            <br><br>
+										            <div class="col-md-4" ng-repeat="Course in clgCourses">
+
+										            	<label><input type="checkbox" ng-checked="diplomaexist(Course.name)" ng-click="togglediplomaSelection(Course)">&nbsp;{{Course.name}}</label>
+														
+										              
+										            </div>
+										          </div>
+										             
+        									</form>
+											
+		  								</div>
+		  								<div class="col-md-2">
+		  									
+		  								</div>		
+  									</div>
+  									
+									
+									
+								</div>
+							</div>
+						</div>
+						<!--//agileinfo-grap-->
+						<br><br>
+						<div class="agileinfo-grap">
+							<div class="agileits-box">
+								<header class="agileits-box-header clearfix">
+									<h3>College Facility</h3>
+										<div class="toolbar">
+											
+											
+										</div>
+								</header>
+								<div class="agileits-box-body clearfix">
+									<div id="hero-area"></div>
+									<div class="row">
+										
+										<div class="col-md-2"></div>
+		  								<div class="col-md-8">
+
+		  									<form class="form-horizontal" role="form">
+										          <div class="form-group">
+										            <!--label class="col-md-3 control-label">Courses</label -->
+										            <div class="col-md-4" ng-repeat="Facility in clgFacility">
+
+										            	<label><input type="checkbox" ng-checked="facility(Facility.name)" ng-click="toggleFacilitySelection(Facility)">&nbsp;{{Facility.name}}</label>
+														
+										              
+										            </div>
+										          </div>
+										             
+        									</form>
+											
+		  								</div>
+		  								<div class="col-md-2">
+		  									
+		  								</div>		
+  									</div>
+  									
+									
+									
+								</div>
+							</div>
+						</div>
+						<!--//agileinfo-grap-->
+
+						<!--//agileinfo-grap-->
+						<br><br>
+						<div class="agileinfo-grap">
+							<div class="agileits-box">
+								<header class="agileits-box-header clearfix">
+									<h3>College Contact </h3>
+										<div class="toolbar">
+											
+											
+										</div>
+								</header>
+								<div class="agileits-box-body clearfix">
+									<div id="hero-area"></div>
+									<div class="row">
+										
+										<div class="col-md-2"></div>
+		  								<div class="col-md-8">
+
+		  									<form name="clgAddress" class="form-horizontal" role="form">
+										          <label class="col-md-3 control-label">Locality:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Locality" required>
+										            </div>
+
+										            <label class="col-md-3 control-label">Street:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Street" required>
+										            </div>
+										    <!-- </form>
+
+										    <form class="form-horizontal" role="form"> -->
+										          <label class="col-md-3 control-label">Dist:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Dist" required>
+										            </div>
+
+										            <label class="col-md-3 control-label">Tal:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Tal" required>
+										            </div>
+										   <!--  </form>
+
+										    <form class="form-horizontal" role="form"> -->
+										          <label class="col-md-3 control-label">State</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="State" required>
+										            </div>
+
+										            <label class="col-md-3 control-label">Pincode</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Pincode" pattern="[0-9]{6}" required>
+										            </div>
+										   <!--  </form>
+
+										    <form class="form-horizontal" role="form"> -->
+										            <label class="col-md-3 control-label">Email Id:</label>
+										            <div class="col-md-8">
+										              <input class="form-control" type="email" ng-model="ClgEmail" required>
+										            </div>
+										    <!-- </form>
+
+										    <form class="form-horizontal" role="form"> -->
+										            <label class="col-md-3 control-label">Website:</label>
+										            <div class="col-md-8">
+										              <input class="form-control" type="text" ng-model="Website" required>
+										            </div>
+										   <!--  </form>
+
+										    <form class="form-horizontal" role="form"> -->
+										          <label class="col-md-3 control-label">Phone Number:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="phone_Number" required>
+										            </div>
+
+										            <label class="col-md-3 control-label">Fax Number:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Fax_Number" required>
+										            </div>
+										    <!-- </form>
+
+										    <form class="form-horizontal" role="form"> -->
+										          <label class="col-md-3 control-label">Near Bus Stop:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Bus_station" required>
+										            </div>
+
+										            <label class="col-md-3 control-label">Near Railway Station:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Railway_station" required>
+										            </div>
+										            <header class="agileits-box-header clearfix">
+														<h3>Social Accounts </h3>
+															<div class="toolbar">
+																
+																
+															</div>
+													</header>
+										            <label class="col-md-3 control-label">Twitter:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="Twitter">
+										            </div>
+
+										            <label class="col-md-3 control-label">Facebook:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="facebook">
+										            </div>
+
+										            <label class="col-md-3 control-label">Instagram:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="instagram">
+										            </div>
+
+										            <label class="col-md-3 control-label">Google+:</label>
+										            <div class="col-md-3">
+										             	<input type="text" name="" class="form-control" ng-model="google">
+										            </div>
+										    </form>
+
+										    
+											
+		  								</div>
+		  								<div class="col-md-2"></div>		
+  									</div>
+  									
+									
+									
+								</div>
+							</div>
+						</div>
+						<!--//agileinfo-grap-->
+						<div class="col-md-4"></div>
+						<div class="col-md-8">
+							<button type="button" class="btn btn-success col-md-2" style="float: right;" ng-disabled="clgInfo.$invalid && clgAddress.$invalid" ng-click="update();">Update</button>
+							<div class="alert alert-success col-md-4" ng-show="updateMsg">
+          						<i class="fa fa-spinner fa-spin"></i>{{ updateMsg }}
+        					</div>
+        					<div class="alert alert-danger col-md-4" ng-show="updateMsgErr">
+          						{{ updateMsgErr }}
+        					</div>
+
+						</div>
+						
+				</div>
+			</div>
+		</div>
+		
+		
+		
+			
+		
+</section>
+
+</section>
+<!--main content end-->
+

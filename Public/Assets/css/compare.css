@@ -1,0 +1,16 @@
+.table
+{
+	margin-top:100px;
+}
+.box
+{
+	
+	border: 1px solid #288fa4;
+	background: linear-gradient(#fff, #dbd2d5);
+	/*background-color: white;*/
+}
+.title
+{
+	/*box-shadow: 0px 0px 8px 0px #3eb8d0;*/
+	color: #900C3F;
+}

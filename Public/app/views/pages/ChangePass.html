@@ -1,0 +1,93 @@
+
+
+<!--main content start-->
+<section id="main-content">
+	<section class="wrapper">
+		
+		<div class="row">
+			<div class="panel-body">
+				<div class="col-md-12 w3ls-graph">
+					<!--agileinfo-grap-->
+						<div class="agileinfo-grap">
+							<div class="agileits-box">
+								<header class="agileits-box-header clearfix">
+									<h3>Password Settings</h3>
+										<div class="toolbar">
+											
+											
+										</div>
+								</header>
+								<div class="agileits-box-body clearfix">
+									<div id="hero-area"></div>
+									<div class="row">
+										<div class="col-md-3 profile">
+											<div class="card">
+		  										<img src="{{profile}}" alt="Avatar" style="width:100%" >
+		  										
+		  									</div>
+		  								</div>
+
+		  								<div class="col-md-9">
+
+		  									<form class="form-horizontal" role="form"  ng-submit="changePass(CurrentPass,newPass);">
+										          <div class="form-group">
+										            <label class="col-md-3 control-label">Current Password:</label>
+										            <div class="col-md-8">
+										              <input class="form-control" type="password" value="" ng-model="CurrentPass" required>
+										            </div>
+										            <label class="col-md-1 control-label text-danger" ng-if="oldpasserr">{{oldpasserr}}</label>
+										          </div>
+										          <div class="form-group">
+										            <label class="col-md-3 control-label">New Password</label>
+										            <div class="col-md-8">
+										              <input class="form-control" type="password" value="" ng-model="newPass" required>
+										            </div>
+										          </div>
+										          
+										       <div class="form-group">
+										            <label class="col-md-3 control-label"></label>
+										            <div class="col-md-8">
+										             <input type="submit" class="btn btn-success" value="Change" style="float: right;">
+										              
+										            </div>
+										        </div>
+										        <div class="form-group" ng-if="passchangesucc">
+										            <label class="col-md-3 control-label"></label>
+										            <div class="col-md-8">
+										             <label class="control-label text-success">{{passchangesucc}}</label>
+										              
+										            </div>
+										        </div>
+										        <div class="form-group" ng-if="passChangeerr">
+										            <label class="col-md-3 control-label"></label>
+										            <div class="col-md-8">
+										             <label class="control-label text-success">{{passChangeerr}}</label>
+										              
+										            </div>
+										        </div>
+        									</form>
+											
+		  								</div>		
+  									</div>
+  									
+									
+									
+								</div>
+							</div>
+						</div>
+	<!--//agileinfo-grap-->
+
+				</div>
+			</div>
+		</div>
+		
+		
+		
+			
+		
+</section>
+ 
+</section>
+<!--main content end-->
+</section>
+

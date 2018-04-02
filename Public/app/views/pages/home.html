@@ -1,0 +1,482 @@
+<!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero" >
+    <div class="hero-container">
+     
+
+      <div class="row fixDiv">
+        <div class="col-sm-5 rightDiv ">
+          <big><h1 style="font-size: 40px; padding-bottom: 0px;">Find a College</h1></big>
+          <small><h2 style="font-size: 20px; padding-top: 0%;">
+                  That you loved most!</h2></small>
+          
+          <div class="container1">
+            <input type="text" class="form-control" name="clg1" placeholder="Enter college name" ng-model="searchClg1" id="clg1" required>
+
+            <div class="col-lg-12" style="background-color: #fff; border-radius: 5px; padding: 10px; margin-top: -8px; display: none;" id="clg1resultDiv" ng-hide="Clg1hide">
+              
+                <div ng-repeat="clg in Colleges | filter:searchClg1" class="clg1result">
+                    <a href="#" ng-click="setCol1(clg);" style="color: #362712;"><strong>{{clg.College_Name | uppercase}}</strong></a>
+                </div>  
+            </div>
+
+            <br>
+
+            <center><h2>Vs</h2></center>
+
+            <input type="text" class="form-control" name="clg2" placeholder="Enter college name to compare" ng-model="searchClg2" id="clg2" required>
+
+            <div class="col-lg-12" style="background-color: #fff; border-radius: 5px; padding: 10px; margin-top: -8px; display: none;" id="clg2resultDiv" ng-hide="Clg2hide">
+              
+                <div ng-repeat="clg in Colleges | filter:searchClg2" class="clg2result">
+                    <a href="#" ng-click="setCol2(clg);" style="color: #362712;"><strong>{{clg.College_Name | uppercase}}</strong></a>
+                </div>  
+            </div>
+
+            <br>
+            <center><button type="button" class="btn btn-success btn-lg" ng-click="compare();">Compare</button></center>
+            <p ng-show="compareerrmsg" class="alert alert-danger">{{compareerrmsg}}</p>
+          </div>
+        </div>
+
+
+        <div class="col-sm-6 col-lg-6 centerDiv" style="color: #fff;">
+          <a href="#" ng-click="feature('Lunch/Dinner Mess')"><div class="leftCir c1" ><p>Lunch/Dinner Mess</p></div></a>
+          <a href="#" ng-click="feature('College Store')"><div class="leftCir c2"><p>Educational Store</p></div></a>
+          <a href="#" ng-click="feature('Degree')"><div class="leftCir c3"><p>Degree</p></div></a>
+          <a href="#" ng-click="feature('Boys Hostel')"><div class="leftCir c4"><p>Boys Hostel</p></div></a>
+          <a href="#"><div class="centerCir"><br><center><h2>FEATURES</h2></center></div></a>
+          <a href="#" ng-click="feature('College Bus')"><div class="leftCir c5"><p>College Bus</p></div></a>
+          <a href="#" ng-click="feature('Girls Hostel')"><div class="leftCir c6"><p>Girls Hostel</p></div></a>
+          <a href="#" ng-click="feature('Diploma')"><div class="leftCir c7"><p>Diploma</p></div></a>
+          <a href="#" ng-click="feature('Playground')"><div class="leftCir c8"><p>Playground</p></div></a>
+        </div>
+      </div>
+    </div>
+  </section><!-- #hero -->
+
+    <main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">college types</h2>
+            <h4 class="section-subheading text-muted">The Following are the main types of Colleges by Which you can Select That you want.</h4>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4" ng-click="feature('Autonomous')">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-font fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Autonomous</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          </div>
+          <div class="col-md-4" ng-click="feature('Government')">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-google fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Government</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          </div>
+          <div class="col-md-4" ng-click="feature('Non-Autonomous')">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-bank fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Non-Autonomous</h4>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts">
+      <div class="container wow fadeIn">
+        <div class="section-header">
+          <h3 class="section-title">Facts</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row counters">
+
+  				<div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">12321</span>
+            <p>Students</p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">{{Colleges.length}}</span>
+            <p>Colleges</p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">24</span>
+            <p>Hours of Support</p>
+  				</div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">5</span>
+            <p>Team Members</p>
+  				</div>
+
+  			</div>
+
+      </div>
+    </section><!-- #facts -->
+
+    <!--==========================
+      Popular Colleges Section
+    ============================-->
+        <section class="bg-light" id="portfolio">
+      <div class="container" ng-if="Colleges.length != 0">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">popular colleges</h2>
+            <h3 class="section-subheading text-muted">Following are the popular colleges based on the visits and interest.</h3>
+          </div>
+        </div>
+       <!--  <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="college in Colleges">
+            <a class="portfolio-link" ng-click="findClg(college._id);">
+              <img class="img-fluid imagefit" src="{{college.profile}}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              
+              <p class="text-muted collegeName">{{college.College_Name}}</p>
+            </div>
+          </div>
+          
+        </div> -->
+        <div class="row">
+          <div class="owl-carousel owl-theme">
+              <div class="item" ng-repeat="college in Colleges">
+                  <a class="portfolio-link" ng-click="findClg(college._id);">
+                    <img class="img-fluid imagefit" src="{{college.profile}}" alt="">
+                  </a>
+                  <div class="portfolio-caption">
+                    
+                    <p class="text-muted collegeName">{{college.College_Name}}</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- #Colleges -->
+
+
+    <!--==========================
+      Popular University Section
+    ============================-->
+        <section class="bg-light" id="portfolio popularuniversities">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">popular universities</h2>
+            <h3 class="section-subheading text-muted">Following are the popular universities based on the visits and interest.</h3>
+          </div>
+        </div>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="500">
+    <div class="carousel-inner">
+      
+      <div class="item active row">
+        <div class="col-sm-6" style="height: 300px;">
+        <img src="img/shivaji.jpg" alt="shivaji" style="width:100%; height: 100%">
+        </div>
+        <div class="col-sm-6" style="height: 300px;">
+        <img src="img/msbte.png" alt="msbte" style="width:100%; height: 100%">
+        </div>
+        
+      </div>
+
+      <div class="item row">
+          <div class="col-sm-6" style="height: 300px;">
+            <img src="img/pune.jpg" alt="pune" style="width:100%; height: 100%">
+           </div> 
+            <div class="col-sm-6" style="height: 300px;">
+            <img src="img/Mumbai-university.jpg" alt="Mumbai" style="width:100%; height: 100%">
+           </div> 
+             
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+      </div>
+    </section><!-- #Universities -->
+
+    <!--==========================
+    Call To Action Section
+    ============================-->
+    <section id="call-to-action">
+      <div class="container wow fadeIn">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-left">
+            <h3 class="cta-title">Call To Action</h3>
+            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="#contact">Call To Action</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #call-to-action -->
+
+    
+
+    <!--==========================
+      Team Section
+    ============================-->
+    <section id="team">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title">Team</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class=""><img class="teamimg" src="img/team-1.jpg" alt=""></div>
+              <h4>Vinayak Chavan</h4>
+              <span>Chief Executive Officer</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team-2.jpg" alt=""></div>
+              <h4>Sarah Jhinson</h4>
+              <span>Product Manager</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team-3.jpg" alt=""></div>
+              <h4>William Anderson</h4>
+              <span>CTO</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team-4.jpg" alt=""></div>
+              <h4>Amanda Jepson</h4>
+              <span>Accountant</span>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title">Contact</h3>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+      </div>
+
+      <div class="container wow fadeInUp">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-4"></div>
+          <div class="col-lg-3 col-md-4">
+
+            <div class="info">
+              <div>
+                <i class="fa fa-map-marker"></i>
+                <p>Sangli-Islampur Road<br>Sangli, 416416</p>
+              </div>
+
+              <div>
+                <i class="fa fa-envelope"></i>
+                <p>careerguidance@gmail.com</p>
+              </div>
+
+              <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 0233 2323423</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 col-md-4">
+            <div class="form">
+              <div id="sendmessage">Thank you!</div>
+              <div id="errormessage"></div>
+              <form role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:1" data-msg="Please enter at least 4 chars"  ng-model="userName"/ >
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" ng-model="userEmail"/>
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" ng-model="subject"/>
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message" ng-model="userMessage"></textarea>
+                  <div class="validation"></div>
+                </div>
+                <div class="text-center"><button class="btn btn-success" ng-click="sendmessage()">Send Message</button></div>
+                {{successmessage}}
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+  <script>
+    $(document).ready(function()
+    {
+       $('#clg1').keyup(function(e)
+        {
+            var key = e.which;
+            //alert(key);
+            if($('#clg1').val() != "" && key != 13)
+            {
+              $('#clg1resultDiv').css('display', 'block');
+
+                 var valThis = $('#clg1').val().toLowerCase();
+                //alert(valThis);
+              $('.clg1result>a').each(function()
+              {
+                 var text = $(this).text().toLowerCase(); 
+                (text.match(valThis)) ? $(this).show() : $(this).hide(); 
+                 });
+            }
+            else
+            {
+            $('#clg1resultDiv').css('display', 'none');
+            }
+        });
+
+          $(document).mouseup(function(e) 
+          {
+            var container = $("#clg1resultDiv");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) 
+            {
+              container.hide();
+             
+            }
+          });
+
+          $('#clg2').keyup(function(e)
+        {
+            var key = e.which;
+            //alert(key);
+            if($('#clg2').val() != "" && key != 13)
+            {
+              $('#clg2resultDiv').css('display', 'block');
+
+                 var valThis = $('#clg2').val().toLowerCase();
+                //alert(valThis);
+              $('.clg2result>a').each(function()
+              {
+                 var text = $(this).text().toLowerCase(); 
+                (text.match(valThis)) ? $(this).show() : $(this).hide(); 
+                 });
+            }
+             else
+            {
+            $('#clg2resultDiv').css('display', 'none');
+            }
+        });
+
+          $(document).mouseup(function(e) 
+          {
+            var container = $("#clg2resultDiv");
+
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) 
+            {
+              container.hide();
+              
+            }
+          });
+
+          $('.owl-carousel').owlCarousel({
+              loop:true,
+              margin:10,
+              nav:true,
+              responsive:{
+                  0:{
+                      items:1
+                  },
+                  600:{
+                      items:3
+                  },
+                  1000:{
+                      items:5
+                  }
+              }
+          })
+       });   
+
+
+  </script>
